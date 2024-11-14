@@ -1,9 +1,6 @@
 import re
 
 def format_interval(vals, right, pattern):
-    # if len(vals) != 2:
-    #     raise ValueError("Each interval must have two values.")
-
     # Faz a formatação do limite inferior
     lower_bound = float(vals[0][1:]) 
     lower_bound_formatted = pattern.format(lower_bound)

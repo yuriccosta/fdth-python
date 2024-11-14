@@ -1,5 +1,5 @@
 import pandas as pd
-import make_fdt_format_classes as mk
+from make_fdt_format_classes import make_fdt_format_classes
 
 def summary_fdt_default(object, columns=range(6), round=2, format_classes=False, pattern="{:09.3e}", row_names=False, right=True, **kwargs):
     # Recupera o elemento table dentro de object
@@ -18,7 +18,7 @@ def summary_fdt_default(object, columns=range(6), round=2, format_classes=False,
 
     # Faz a formatação das classes caso format_classes seja verdadeiro
     if format_classes:
-        res.iloc[:, 0] = mk.make_fdt_format_classes(res.iloc[:, 0].astype(str), right_tmp, pattern)
+        res.iloc[:, 0] = make_fdt_format_classes(res.iloc[:, 0].astype(str), right_tmp, pattern)
 
     columns_names = ['Class limits', 'f', 'rf', 'rf(%)', 'cf', 'cf(%)']
     res.columns = [columns_names[i] for i in columns]
