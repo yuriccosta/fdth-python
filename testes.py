@@ -1,7 +1,10 @@
 from summary_fdt_default import summary_fdt_default
+from print_fdt_cat_default import print_fdt_cat_default
 import pandas as pd
 
 
+# Testes summary_fdt_default
+'''
 # Definindo o objeto de teste
 object1 = {
     'table': pd.DataFrame({
@@ -109,3 +112,45 @@ object6 = {
 print("Teste 6: Teste com Padrão Simples de Formatação (pattern)")
 summary_fdt_default(object6, format_classes=True, columns=range(6), round=2, pattern='{0:09.2f}')
 print()
+'''
+
+# Testes print_fdt_cat_default
+
+'''
+# Teste 1: Simples com frequências e percentuais
+x1 = pd.DataFrame({
+    'Category': ["A", "B", "C"],
+    'f': [10, 20, 30],
+    'rf': [0.1, 0.2, 0.3],
+    'rf(%)': [10.0, 20.0, 30.0],
+    'cf': [10, 30, 60],
+    'cf(%)': [10.0, 30.0, 60.0]
+})
+
+print("Teste 1: Simples com frequências e percentuais")
+print_fdt_cat_default(x1, columns=range(6), round=2)
+
+# Teste 2: Dados com números decimais
+x2 = pd.DataFrame({
+    'Category': ["D", "E", "F"],
+    'f': [5.5, 7.25, 12.75],
+    'rf': [0.15, 0.25, 0.6],
+    'rf(%)': [15.0, 25.0, 60.0],
+    'cf': [5.5, 12.75, 25.5],
+    'cf(%)': [15.0, 40.0, 100.0]
+})
+
+print("\nTeste 2: Dados com números decimais")
+print_fdt_cat_default(x2, columns=range(6), round=2)
+
+# Teste 3: Usando menos colunas (apenas Category, f e rf(%))
+x3 = pd.DataFrame({
+    'Category': ["G", "H", "I"],
+    'f': [8, 12, 10],
+    'rf': [0.16, 0.24, 0.2],
+    'rf(%)': [16.0, 24.0, 20.0]
+})
+
+print("\nTeste 3: Usando menos colunas (Category, f, rf(%))")
+print_fdt_cat_default(x3, columns=[0, 1, 2], round=2)
+'''
