@@ -27,3 +27,5 @@ def summary_fdt_default(object, columns=range(6), round=2, format_classes=False,
         print(res, **kwargs)
     else:
         print(res.to_string(index=False), **kwargs)
+
+    return res

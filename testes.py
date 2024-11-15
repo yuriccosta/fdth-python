@@ -4,7 +4,7 @@ import pandas as pd
 
 
 # Testes summary_fdt_default
-'''
+#'''
 # Definindo o objeto de teste
 object1 = {
     'table': pd.DataFrame({
@@ -20,8 +20,8 @@ object1 = {
 
 # Chamando a função para exibir o resumo
 print("Teste 1: Teste Simples com Frequências Inteiras")
-summary_fdt_default(object1, format_classes=False, columns=range(6), round=2)
-print()
+resultado = summary_fdt_default(object1, format_classes=False, columns=range(6), round=2)
+print(f"\nResultado: \n{resultado}\n")
 
 # Definindo o objeto de teste
 object2 = {
@@ -38,8 +38,8 @@ object2 = {
 
 # Chamando a função para exibir o resumo com formatação de classes
 print("Teste 2: Teste com Formatação de Classes")
-summary_fdt_default(object2, format_classes=True, columns=range(6), round=2)
-print()
+resultado = summary_fdt_default(object2, format_classes=True, columns=range(6), round=2)
+print(f"\nResultado: \n{resultado}\n")
 
 # Definindo o objeto de teste
 object3 = {
@@ -56,8 +56,8 @@ object3 = {
 
 # Chamando a função para exibir apenas as três primeiras colunas
 print("Teste 3: Teste com Colunas Selecionadas")
-summary_fdt_default(object3, format_classes=False, columns=range(3), round=2)
-print()
+resultado = summary_fdt_default(object3, format_classes=False, columns=range(3), round=2)
+print(f"\nResultado: \n{resultado}\n")
 
 # Definindo o objeto de teste
 object4 = {
@@ -74,8 +74,8 @@ object4 = {
 
 # Chamando a função para exibir o resumo com arredondamento para 1 casa decimal
 print("Teste 4: Teste com Arredondamento de Valores")
-summary_fdt_default(object4, format_classes=False, columns=range(6), round=1)
-print()
+resultado = summary_fdt_default(object4, format_classes=False, columns=range(6), round=1)
+print(f"\nResultado: \n{resultado}\n")
 
 # Definindo o objeto de teste
 object5 = {
@@ -92,8 +92,8 @@ object5 = {
 
 # Chamando a função para exibir o resumo
 print("Teste 5: Teste com Variação nas Frequências")
-summary_fdt_default(object5, format_classes=False, columns=range(6), round=2)
-print()
+resultado = summary_fdt_default(object5, format_classes=False, columns=range(6), round=2)
+print(f"\nResultado: \n{resultado}\n")
 
 # Definindo o objeto para o teste 6 em Python
 object6 = {
@@ -110,9 +110,9 @@ object6 = {
 
 # Chamando a função em Python com padrão simples
 print("Teste 6: Teste com Padrão Simples de Formatação (pattern)")
-summary_fdt_default(object6, format_classes=True, columns=range(6), round=2, pattern='{0:09.2f}')
-print()
-'''
+resultado = summary_fdt_default(object6, format_classes=True, columns=range(6), round=2, pattern='{0:09.2f}')
+print(f"\nResultado: \n{resultado}\n")
+#'''
 
 # Testes print_fdt_cat_default
 
