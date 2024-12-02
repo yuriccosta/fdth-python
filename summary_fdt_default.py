@@ -2,21 +2,21 @@ import pandas as pd
 from make_fdt_format_classes import make_fdt_format_classes
 
 def summary_fdt_default(object, columns=range(6), round=2, format_classes=False, pattern="{:09.3e}", row_names=False, right=True, **kwargs):
-    # Recupera o elemento table dentro de object
+    # Retrieves the table element inside object
     res = object['table']
 
-    # Arredonda os valores das colunas de 1 a 5
+    # Rounds the values of columns from 1 to 5
     res.iloc[:, 1:6] = res.iloc[:, 1:6].round(round) 
-    # Concatena a coluna 0 com as demais colunas
+    # Concatenate column 0 with the other columns 
     res = pd.concat([res.iloc[:, [0]], res.iloc[:, 1:6]], axis=1)
     
-    # Filtra as colunas
+    # Filters the columns
     res = res.iloc[:, columns]
 
-    # Acessa o elemento right dentro de object -> breaks, e o converte para booleano
+    # Accesses the right element within object -> breaks, and converts it to boolean
     right_tmp = bool(object['breaks']['right'])
 
-    # Faz a formatação das classes caso format_classes seja verdadeiro
+    # Formats classes if format_classes is true
     if format_classes:
         res.iloc[:, 0] = make_fdt_format_classes(res.iloc[:, 0].astype(str), right_tmp, pattern)
 
