@@ -24,9 +24,15 @@ def summary_fdt_default(object, columns=range(6), round=2, format_classes=False,
     columns_names = ['Class limits', 'f', 'rf', 'rf(%)', 'cf', 'cf(%)']
     res.columns = [columns_names[i] for i in columns]
 
+    if not right:
+        # @TODO The left alignment needs to be implemented 
+        pass
+
     if row_names:
+        # If row_names is set as 'true', indexes will be printed
         print(res, **kwargs)
     else:
+        # If row_names is set as 'false', indexes won't be printed
         print(res.to_string(index=False), **kwargs)
 
     return res
