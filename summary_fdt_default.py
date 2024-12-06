@@ -1,7 +1,8 @@
 import pandas as pd
 from make_fdt_format_classes import make_fdt_format_classes
 
-def summary_fdt_default(object, columns=range(6), round=2, format_classes=False, pattern="{:09.3e}", row_names=False, right=True, **kwargs):
+def summary_fdt_default(object, columns=range(6), round=2, format_classes=False,
+                        pattern="{:09.3e}", row_names=False, right=True, **kwargs):
     # Retrieves the table element inside object
     res = object['table']
 
