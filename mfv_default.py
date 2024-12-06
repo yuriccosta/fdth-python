@@ -1,6 +1,10 @@
 from collections import Counter
 
 def mfv_default(x, **kwargs):
+    # Se o conjunto de dados estiver vazio, retorne None
+    if len(x) == 0:
+        return None
+    
     # Conta a frequência de cada elemento no conjunto de dados
     frequency = Counter(x)
     
