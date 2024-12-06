@@ -16,7 +16,7 @@ def make_fdt_simple(x, start, end, h, right=False):
                cumulative frequencies, and cumulative percentages.
     """
     bins = np.arange(start, end + h, h)
-    labels = [f"{round(bins[i], 2)} - {round(bins[i + 1], 2)}" for i in range(len(bins) - 1)]
+    labels = [f"[{round(bins[i], 2)}, {round(bins[i + 1], 2)})" for i in range(len(bins) - 1)]
     f = pd.cut(x, bins=bins, right=right, labels=labels).value_counts()
     rf = f / len(x)
     rfp = rf * 100
@@ -31,5 +31,7 @@ def make_fdt_simple(x, start, end, h, right=False):
         'cf': cf.values,
         'cf(%)': cfp.values
     })
+
+    table.index = np.arange(1, len(table) + 1)
     
     return table
