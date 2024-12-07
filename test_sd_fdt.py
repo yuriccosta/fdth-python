@@ -1,7 +1,6 @@
 import numpy as np
-from mean import mean_fdt
+from sd_fdt_default import sd_fdt
 
-# Dados para os 4 testes
 data_test1 = {
     'breaks': {'start': 0, 'end': 10, 'h': 2},
     'table': np.array([
@@ -43,8 +42,9 @@ data_test4 = {
     ])
 }
 
+
 # Executando os testes
-print("Teste 1:", mean_fdt(data_test1))
-print("Teste 2:", mean_fdt(data_test2))
-print("Teste 3:", mean_fdt(data_test3))
-print("Teste 4:", mean_fdt(data_test4))
+print("Teste 1 (Desvio Padrão):", sd_fdt(data_test1))
+print("Teste 2 (Desvio Padrão):", sd_fdt(data_test2))
+print("Teste 3 (Desvio Padrão):", sd_fdt(data_test3))
+print("Teste 4 (Desvio Padrão):", sd_fdt(data_test4))
