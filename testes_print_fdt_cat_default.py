@@ -16,7 +16,7 @@ tdf_categorias = fdt_cat_default(x = categorias)
 print(f"TDF Categorica 1\n{tdf_categorias}\n")
 
 print_fdt_cat_default(x = tdf_categorias, columns = [0, 1, 3, 4], round=2, row_names=False, right=False)
-
+print()
 
 # Exemplo de vetor categórico com números e texto
 categorias2 = [
