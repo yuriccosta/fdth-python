@@ -1,7 +1,7 @@
 import pandas as pd
 
 def summary_fdt_cat_default(object, columns=range(6), round=2, row_names=False, right=True, **kwargs):
-        # Concatena a linha 0 com as linhas 1 a 5 (arredondadas)
+   # Concatena a linha 0 com as linhas 1 a 5 (arredondadas)
     res = pd.concat([object.iloc[:, [0]], object.iloc[:, 1:6].round(round)], axis=1)
     # Filtra as colunas
     res = res.iloc[:, columns]
