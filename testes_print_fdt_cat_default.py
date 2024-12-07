@@ -10,11 +10,9 @@ categorias = [
     "Masculino", "Outro", "Feminino", "Outro", "Masculino", 
     "Feminino", "Masculino", "Outro", "Outro", "Feminino"
 ]
-print(f"\nx = {categorias}\n")
 
 tdf_categorias = fdt_cat_default(x = categorias)
-print(f"TDF Categorica 1\n{tdf_categorias}\n")
-
+print(f"TDF Categorica 1\n")
 print_fdt_cat_default(x = tdf_categorias, columns = [0, 1, 3, 4], round=2, row_names=False, right=False)
 print()
 
@@ -26,6 +24,6 @@ categorias2 = [
 ]
 
 tdf_categorias2 = fdt_cat_default(categorias2)
-print(f"TDF Categorica 2\n{tdf_categorias2}\n")
-
+print(f"TDF Categorica 2\n")
 print_fdt_cat_default(x = tdf_categorias2, round=2)
+print()
