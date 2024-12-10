@@ -1,10 +1,10 @@
-import pand as pd
+import pandas as pd
 from make_fdt_format_classes import make_fdt_format_classes
 
 def print_fdt_default(x, columns=range(6), round=2, format_classes=False, 
                       pattern="{:09.3e}", row_names=False, right=True, **kwargs):
-    # Recupera o elemento table dentro de object
-    res = object['table']
+    # Recupera o elemento table dentro de x
+    res = x['table']
 
     # Arredonda os valores das colunas de 1 a 5
     res.iloc[:, 1:6] = res.iloc[:, 1:6].round(round) 
@@ -14,8 +14,8 @@ def print_fdt_default(x, columns=range(6), round=2, format_classes=False,
     # Filtra as colunas
     res = res.iloc[:, columns]
 
-    # Acessa o elemento right dentro de object -> breaks, e o converte para booleano
-    right_tmp = bool(object['breaks']['right'])
+    # Acessa o elemento right dentro de x -> breaks, e o converte para booleano
+    right_tmp = bool(x['breaks']['right'])
 
     # Faz a formatação das classes caso format_classes seja verdadeiro
     if format_classes:

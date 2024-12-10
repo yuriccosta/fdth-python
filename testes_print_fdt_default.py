@@ -1,4 +1,4 @@
-from summary_fdt_default import print_fdt_default
+from print_fdt_default import print_fdt_default
 from fdt_default import fdt_default
 
 # Vetor inicial
@@ -20,5 +20,5 @@ print_fdt_default(tdf_x, columns = col, format_classes = True, pattern = "{:.5e}
 
 '''
 A formatação das classe é feita através da função "make_fdt_format_classes", chamada durante a 
-execução da função summary_fdt_default.
+execução da função print_fdt_default.
 '''

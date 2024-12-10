@@ -1,5 +1,5 @@
 from make_fdt_cat_simple import make_fdt_cat_simple
-def fdt_cat_default(x, sort=True, decreasing=True):
+def fdt_cat_default(object, sort=True, decreasing=True):
     """
     Main function to create a frequency distribution table for categorical data.
 
@@ -12,7 +12,7 @@ def fdt_cat_default(x, sort=True, decreasing=True):
     pd.DataFrame: A DataFrame containing the frequency distribution table.
     """
     # Call the make_fdt_cat_simple function to create the table
-    res = make_fdt_cat_simple(x, sort=sort, decreasing=decreasing)
+    res = make_fdt_cat_simple(object, sort=sort, decreasing=decreasing)
 
     # Adding class attributes as metadata (optional, for traceability)
     res.attrs = {
